@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "A Dummy API Server for Interview project",
+  "author": "Lei Chen",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.15.4",
+    "express-promise-router": "^3.0.3",
+    "mongoose": "^5.1.6",
+    "mongoose-timestamp": "^0.6.0",
+    "supertest": "^3.3.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --reporter spec"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
