@@ -1,3 +1,146 @@
+# Clear Capital Interview Project - Sr Software Engineer
+
+
+an API-service  server is located at services/api folder
+
+Web server is located at service/web
+
+### usage
+
+
+please make sure install Docker.
+
+and run the following command
+
+```
+docker-compose up --build
+
+```
+the docker will run the API server(local port 8080) and website(local port 8000)
+you should able to  see the webpage at http://localhost:8000
+
+without docker please go to services/api folder run
+
+```
+npm install
+npm start
+
+```
+then go to services/web folder run
+
+```
+npm install
+npm start
+
+```
+you should able to  see the webpage at http://localhost:3000
+
+
+
+## Architecture
+
+| Name             | Service | Container   | tech                   |
+|------------------|---------|-------------|------------------------|
+| Web              | Web     |   web       | React,Redux,Saga,Antd  |
+| api-service      | API     | api-service | Node,Express,Mongoose,Joi|
+
+
+##
+
+
+## WebSite Map
+
+| Pages            | Usage   and   Des                    |
+|------------------|-------------------------------------------------|
+| Login            | Login                                           |
+| UserInfo         |  UI/UX Design Challenge--the profile page        |
+| RESTfUL          |  Web Service Engineering Challenge |
+| JS               |  JS Engineering Challenge |  |
+| ETL              |  ETL Engineering Challenge |  |
+
+
+##
+
+
+
+### the structure of the project.
+
+there are tons of ways to structure the react project. I would love to change my preference for the future team. However, if I make the decision will choose the following structure which I used in this project.
+##
+|                  |  |     |                   |
+|------------------|---------|-------------|------------------------|
+| page             |                                                |
+|     | fns     |  |   (all the key algorithm for model)          |
+|     |model     |  |   (all the key algorithm for model)          |
+|     |    | actions |  (action sand action creaters )        |
+|     |    | saga | (injected to this page)       |
+|     |    | reducer | (injected to this page)       |
+|     |    | reducer | (I normally use reselector ,did not use it because there      |
+|     | styles     |  |   (css)          |
+|     | sub-page-components     |  | (only used for this page,may create a folder for it)        |
+|     | index    |  |            |
+
+##
+
+
+### saga, reducers
+
+only root reducer is inited at the beginning, other reducers and sagas are injected when I need them. the main config file is in the config/configure store.js   the rest parts are in the utils folder.
+
+
+
+### Algorithm and code style
+ 
+To Approve I am good at Native Javascript, when process the object or array, I only used Native JavaScript instead of Underscore and lodash and I am really good at Ramda.js
+
+the recompose(https://github.com/acdlite/recompose) is used in this project for injecting lifecycle and combine functions by using compose
+
+##
+
+
+
+
+
+### Login Page
+
+ You could input an email address and any password to login to the main page
+
+##
+
+## extra word about Challenges
+
+### ETL Engineering Challenge
+
+
+Two Callback functions are used  onFileLoaded and filterCallback
+onFileLoaded is used for processing the JSON Data and Header
+filterCallback is used for the future need for data validation.
+and the key Algorithm is parserAlgorithm.js in the fns folder.
+
+
+### Web Service Engineering Challenge
+
+for the back-end:
+I used Mongodb for database and the mlab is the  MongoDB database provider), I  used Mongoose for object modeling, joi.js is used for extra data validation. there are some extra APIs developed for future use.
+For front end:
+Saga is used to handle the async flow, the saga files demonstrate my ability to use redux-Saga. and All CRUD calls are handled in one page with Modal.
+
+
+### JS Engineering Challenge
+
+The Search Algorithms are in searchAlgorithm file of fns folder.
+there are to functions, strictSearch and fuzzySearch. you could use the switch button to switch
+the mode.
+
+### UI/UX Design Challenge
+
+there is no description and data for dashboard. So I did nothing about that dashboard page.
+and the UserInfo is for that profile.html
+
+The user data was loaded when user login, so there is no need to use the saga. I inject a simple state by using
+recompose instead use the redux to reduce  the complexity
+
+
 # code-challenge
 
 ## Introduction
