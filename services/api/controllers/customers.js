@@ -13,7 +13,6 @@ const customers = {
   },
 
   newCustomer: async (req, res, next) => {
-
     const newCustomer = new Customer(req.body);
     const user = await newCustomer.save();
     res.status(201).json(user);
@@ -30,13 +29,17 @@ const customers = {
   replaceCustomer: async (req, res, next) => {
     const {customerId} =req.params;
     const newCustomer = req.body
-    const result = await Customer.findByIdAndUpdate(customerId,newCustomer)
+    await Customer.findByIdAndUpdate(customerId,newCustomer)
     res.status(200).json({success: true});
   },
   updateCustomer: async (req, res, next) => {
     const {customerId} =req.params;
     const newCustomer = req.body
-    const result = await Customer.findByIdAndUpdate(customerId,newCustomer)
+    try{
+      const result = await Customer.findByIdAndUpdate(customerId,newCustomer)
+    }catch (e) {
+      console.log(e)
+    }
     res.status(200).json({success: true});
   },
   deleteCustomer: async (req, res, next) => {

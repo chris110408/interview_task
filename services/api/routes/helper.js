@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
 module.exports = {
-  validteBody: (schema, name) => {
+  validteBody: (schema) => {
     return (req, res, next) => {
       const result = Joi.validate(req.body, schema);
 

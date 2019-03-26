@@ -34,6 +34,16 @@ app.get("/api/users",function (req,res) {
     res.status(400).json({ errors: { global: 'request errors -- no users data' } });
   }
 })
+
+
+app.get("/api/mock_customers",function (req,res) {
+  var data = require('./MockData/customers');
+  if (data) {
+    res.json(data);
+  } else {
+    res.status(400).json({ errors: { global: 'request errors -- no customers data' } });
+  }
+})
 app.use('/api/customers', require('./routes/customers'));
 
 

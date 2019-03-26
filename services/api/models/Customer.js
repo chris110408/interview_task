@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const timestamp = require('mongoose-timestamp');
+var uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
 
 // Create Schema
@@ -17,6 +18,7 @@ const CustomerSchema = new Schema({
   email: {
     type: String,
     required: true,
+    unique: true,
     trim: true
   },
   ip: {
@@ -32,6 +34,6 @@ const CustomerSchema = new Schema({
     trim: true
   }
 });
-
+CustomerSchema.plugin(uniqueValidator);
 CustomerSchema.plugin(timestamp);
 module.exports = Item = mongoose.model('customer', CustomerSchema);
