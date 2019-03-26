@@ -1,0 +1,23 @@
+version: '3.0'
+
+services:
+  api:
+      container_name: api-service
+      build: ./services/api
+      network_mode: bridge
+      volumes:
+        - '/usr/src/app'
+      ports:
+        - 8080:8080
+  web:
+        container_name: web-service
+        build: ./services/web
+        network_mode: bridge
+        volumes:
+          - '/usr/src/app'
+        ports:
+          - 8000:3000
+        depends_on:
+          - api
+        links:
+          - api
