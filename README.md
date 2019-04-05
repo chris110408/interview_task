@@ -17,8 +17,8 @@ docker-compose up --build
 
 ```
 
-the docker will run the API server(local port 8080) and website(local port 8000)
-you should able to  see the webpage at http://localhost:8000
+the docker will run the API server(local port 8080) and website(local port 3000)
+you should able to  see the webpage at http://localhost:3000
 
 without docker please go to services/api folder run
 
