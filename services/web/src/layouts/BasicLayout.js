@@ -58,7 +58,6 @@ export const BasicLayout = ({
   const layout = (
     <Layout>
       <SiderMenu
-        logo="https://www.clearcapital.com/wp-content/uploads/2017/08/Clear-Capital-Logo.png"
         menuData={getMenuData()}
         collapsed={collapsed}
         location={location}
