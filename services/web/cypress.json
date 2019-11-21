@@ -1,0 +1,6 @@
+{
+  "projectId": "vegas",
+  "baseUrl": "http://localhost:3000",
+  "ignoreTestFiles": "*.js",
+  "testFiles": "**/*.{feature,features}"
+}

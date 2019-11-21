@@ -1,4 +1,4 @@
-FROM node:10.10.0
+FROM node:10.15.3
 
 RUN mkdir /usr/src/server
 COPY . /usr/src/server
@@ -10,4 +10,4 @@ RUN npm install
 
 CMD ["npm","start"]
 
-EXPOSE 8080
+EXPOSE 8888

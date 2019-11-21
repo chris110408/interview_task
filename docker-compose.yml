@@ -8,7 +8,7 @@ services:
       volumes:
         - '/usr/src/app'
       ports:
-        - 8080:8080
+        - 8888:8888
   web:
         container_name: web-service
         build: ./services/web

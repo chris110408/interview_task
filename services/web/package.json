@@ -1,84 +1,52 @@
 {
-  "name": "Interview_Project",
+  "name": "vegas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@antv/data-set": "^0.10.1",
-    "AsyncStorage": "^0.1.5",
-    "antd": "^3.2.0",
-    "classnames": "^2.2.5",
-    "email-validator": "^1.1.1",
-    "enquire-js": "^0.1.2",
-    "enquire.js": "^2.1.6",
-    "enzyme": "^3.7.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^7.0.2",
-    "eslint-plugin-prettier": "^3.0.1",
-    "fine-uploader-wrappers": "^1.0.1",
-    "g2": "^2.3.13",
-    "gravatar-url": "^2.0.0",
-    "hoist-non-react-statics": "^2.3.1",
-    "immutable": "^3.8.2",
-    "invariant": "^2.2.2",
-    "mocha": "^5.2.0",
-    "moment": "^2.22.2",
-    "node-less-chokidar": "^0.1.2",
-    "npm-run-all": "^4.1.2",
-    "path-to-regexp": "^2.1.0",
-    "prop-types": "^15.6.0",
-    "ramda": "^0.25.0",
-    "rc-drawer-menu": "^0.5.5",
-    "react": "^16.2.0",
-    "react-container-query": "^0.11.0",
-    "react-document-title": "^2.0.3",
-    "react-dom": "^16.2.0",
-    "react-fine-uploader": "^1.1.1",
-    "react-helmet": "^5.2.0",
-    "react-loadable": "^5.5.0",
-    "react-redux": "5.0.5",
-    "react-router-dom": "^4.1.2",
-    "react-router-redux": "5.0.0-alpha.9",
-    "react-scripts": "1.1.1",
-    "recompose": "^0.26.0",
-    "redux": "3.7.2",
-    "redux-immutable": "4.0.0",
-    "redux-saga": "0.15.3",
-    "reselect": "3.0.1",
-    "shortid": "^2.2.14",
-    "styled-components": "^3.1.6",
-    "styled-media-query": "^2.0.2",
-    "whatwg-fetch": "^2.0.3",
-    "react-app-rewire-less": "^2.1.0",
-    "react-app-rewired": "^1.4.1"
+    "classnames": "^2.2.6",
+    "connected-react-router": "4.5.0",
+    "cypress": "^3.4.1",
+    "cypress-cucumber-preprocessor": "1.11.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-redux": "5.1.2",
+    "react-router": "4.4.0-beta.8",
+    "react-router-dom": "4.4.0-beta.8",
+    "react-scripts": "3.2.0",
+    "react-spinkit": "^3.0.0",
+    "redux": "4.0.4",
+    "redux-saga": "^1.1.1",
+    "styled-components": "^4.4.1",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
-    "start": "react-app-rewired  start",
-    "build": "react-app-rewired  build",
-    "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cytest": "cypress run --spec \"**/*.feature\""
   },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-import": "^1.6.3",
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^4.0.0"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/examples/",
-      "/node_modules/",
-      "/__eslint__/"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "testMatch": [
-      "<rootDir>/**/*.test.js"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "devDependencies": {
+    "cypress": "^3.4.1",
+    "cypress-cucumber-preprocessor": "1.11.2",
+    "lodash": "^4.17.15"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
 }

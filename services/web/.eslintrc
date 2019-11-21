@@ -1,28 +1,28 @@
 {
-  "plugins": [
+    "plugins": [
     "react","import"
-  ],
-  "extends": [
+],
+    "extends": [
     "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-     "standard-react"
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": {
+    "standard-react"
+],
+    "parser": "babel-eslint",
+    "parserOptions": {
     "ecmaVersion": 7,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "es6": true,
-      "classes": true
+        "sourceType": "module",
+        "ecmaFeatures": {
+        "jsx": true,
+            "es6": true,
+            "classes": true
     }
-  },
-  "env": {
+},
+    "env": {
     "browser": true,
-    "es6": true
-  },
-  "rules": {
+        "es6": true
+},
+    "rules": {
     "jsx-quotes": 0
-  }
+}
 }

@@ -2,7 +2,6 @@
  * Created by leichen on 12/02/2018.
  */
 import "whatwg-fetch";
-import { notification } from "antd";
 
 const codeMessage = {
   200: "ok",
@@ -27,19 +26,7 @@ async function checkStatus(response) {
     return response;
   }
 
-  const str = await response.text();
-
-  let emailError;
-  if (str.indexOf("duplicate key ") > 1) {
-    emailError =
-      "email address should be unique,Please use a different email address";
-  }
   const errortext = codeMessage[response.status] || response.statusText;
-  notification.error({
-    message: `Error ${response.status}: ${response.url}`,
-    description: emailError ? emailError : errortext,
-    duration: 8
-  });
   const error = new Error(errortext);
   error.name = response.status;
   error.response = response;
@@ -84,32 +71,4 @@ export default async function request(url, options) {
     /* eslint-disable */
     console.log(e);
   }
-  // const response= await fetch(url, newOptions)
-  //   // .then(checkStatus)
-  //   .then(response => {
-  //     if (newOptions.method === 'DELETE' || response.status === 204) {
-  //       return response.text()
-  //     }
-  //     return response.json()
-  //   })
-  //   .catch(e => {
-  //     console.log(e)
-  //     console.log(e.toString())
-  //     const status = e.name
-  //     if (status === 401) {
-  //       console.log('logout')
-  //       return
-  //     }
-  //     if (status === 403) {
-  //       console.log(403)
-  //       return
-  //     }
-  //     if (status <= 504 && status >= 500) {
-  //       console.log(500)
-  //       return
-  //     }
-  //     if (status >= 404 && status < 422) {
-  //       console.log(404)
-  //     }
-  //   })
 }

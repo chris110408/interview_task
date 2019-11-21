@@ -9,6 +9,7 @@ const app = express();
 
 // Bodyparser Middleware
 app.use(express.json());
+app.use('/assets', express.static( 'public'))
 
 const whitelist = ['http://localhost:3000', 'http://localhost:8000']
 
@@ -24,44 +25,50 @@ var corsOptions = {
 }
 app.use(cors(corsOptions));
 
-// DB Config
-const db = config.get('mongoURI');
 
-// Connect to Mongo
-mongoose
-  .connect(db, {
-    useNewUrlParser: true,
-    useCreateIndex: true
-  }) // Adding new mongo url parser
-  .then(() => console.log('MongoDB Connected...'))
-  .catch(err => console.log(err));
+
 
 // Use Routes
 
-app.get("/api/users",function (req,res) {
-  var data = require('./MockData/user');
-  if (data) {
-    res.json(data);
-  } else {
-    res.status(400).json({ errors: { global: 'request errors -- no users data' } });
-  }
+
+
+app.get("/api/hotels/venetian",function (req,res) {
+
+    var data = require('./MockData/venetian');
+
+    if (data) {
+        res.json(data);
+    } else {
+        res.status(400).json({ errors: { global: 'request errors -- no users data' } });
+    }
 })
 
 
-app.get("/api/mock_customers",function (req,res) {
-  var data = require('./MockData/customers');
-  if (data) {
-    res.json(data);
-  } else {
-    res.status(400).json({ errors: { global: 'request errors -- no customers data' } });
-  }
+app.get("/api/hotels/",function (req,res) {
+    var data = require('./MockData/index');
+    if (data) {
+        res.json(data);
+    } else {
+        res.status(400).json({ errors: { global: 'request errors -- no customers data' } });
+    }
 })
+
+
+
+
+
+
+
+
+
+
+
 app.use('/api/customers', require('./routes/customers'));
 
 
 
 
-const port = 8080;
+const port = 8888;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
